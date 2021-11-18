@@ -1,0 +1,45 @@
+.hero {
+  composes: g-grid-container from global;
+  padding-top: 100px;
+}
+
+.heroInner {
+  padding-top: 88px;
+  padding-bottom: 200px;
+  composes: g-grid-container from global;
+  display: grid;
+  align-items: center;
+  column-gap: 32px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  row-gap: 32px;
+}
+
+.imageContainer {
+  grid-column: 1 / 3;
+}
+
+.textContainer {
+  grid-column: 3 / -1; 
+}
+
+.title {
+  color: var(--red);
+}
+
+.pretitle {
+  color: var(--indigo);
+}
+
+@media (min-width: 768px) {
+  .heroInner {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .imageContainer {
+    grid-column: 1 / 5;
+  }
+
+  .textContainer {
+    grid-column: 5 / -1;
+  }
+}
